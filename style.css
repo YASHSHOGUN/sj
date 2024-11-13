@@ -385,7 +385,7 @@ video {
 }
 
 .callflat {
-    background: url("./assets/phone.png");
+    background: url("./assets/instagram.svg");
     height: 50px;
     width: 50px;
     transition: ease 500ms;
@@ -394,7 +394,7 @@ video {
 }
 
 .callflat:hover {
-    background: url("./assets/phone.png");
+    background: url("./assets/instagram.svg");
     height: 60px;
     background-size: 60px;
     opacity: 0.5;
@@ -604,7 +604,7 @@ video {
 }
 
 .callflat {
-    background: url("./assets/phone.png");
+    background: url("./assets/instagram.svg");
     height: 50px;
     width: 50px;
     transition: ease 500ms;
@@ -613,7 +613,7 @@ video {
 }
 
 .callflat:hover {
-    background: url("./assets/phone.png");
+    background: url("./assets/instagram.svg");
     height: 60px;
     background-size: 60px;
     opacity: 0.5;
