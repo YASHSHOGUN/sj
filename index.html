@@ -101,9 +101,50 @@
             <div class="whatsappflat"></div>
         </a>
         <br>
-        <a href="tel:630-306-2887">
+        <a href="https://www.instagram.com/sj_interiors_dnd?igsh=M2J4cWIzYW9qbHBv" target="_blank">
             <div class="callflat"></div>
         </a>
+        <br>
+        <!-- "Get a Quote" Button -->
+        <button id="getQuoteBtn">Get a Quote</button>
+    </div>
+    
+    <!-- Popup Form -->
+    <div id="quoteFormPopup" class="popup">
+        <div class="popup-content">
+            <span class="close-btn">&times;</span>
+            <h2>Get a Quote</h2>
+            <div class="custom-contact-section">
+                <div class="custom-contact-container">
+                  
+                  <!-- Left Section - Contact Form -->
+                  <div class="custom-contact-form">
+                    <div class="custom-contact-header">
+                    </div>
+                    <form class="custom-form">
+                      <input type="text" name="name" placeholder="Name">
+                      <input type="text" name="phone" placeholder="Phone Number">
+                      <input type="email" name="email" placeholder="Email">
+                      <input type="text" name="budget" placeholder="Budget">
+                      <textarea name="message" placeholder="Message"></textarea>
+                      <button type="submit">SEND</button>
+                    </form>
+                  </div>
+              
+                  <!-- Right Section - Office Details -->
+                  <div class="custom-office-details">
+                    <br>
+                    <br>
+                      <br>
+                      
+                    <img src="assets/table.webp" alt="Office Image" class="custom-office-image">
+                    <div class="custom-office-info">
+                    </div>
+                  </div>
+              
+                </div>
+              </div>
+        </div>
     </div>
     <div class="container1" style="background-color: #e3c9a8;">
         
@@ -124,7 +165,192 @@
 <link rel="preconnect" href="https://fonts.googleapis.com/">
 <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
 <link href="./SJ Interiors_files/css2" rel="stylesheet">
+
+
+<script>
+    // Get elements
+const getQuoteBtn = document.getElementById('getQuoteBtn');
+const quoteFormPopup = document.getElementById('quoteFormPopup');
+const closeBtn = document.querySelector('.close-btn');
+
+// Show the popup when clicking "Get a Quote"
+getQuoteBtn.onclick = function() {
+    quoteFormPopup.style.display = 'block';
+};
+
+window.onload = function() {
+        quoteFormPopup.style.display = 'block';
+    };
+
+// Close the popup when clicking the close button
+closeBtn.onclick = function() {
+    quoteFormPopup.style.display = 'none';
+};
+
+// Close the popup when clicking outside of it
+window.onclick = function(event) {
+    if (event.target == quoteFormPopup) {
+        quoteFormPopup.style.display = 'none';
+    }
+};
+
+</script>
+
+
 <style>
+
+/* General Styling for Contact Section */
+.custom-contact-section {
+                  display: flex;
+                  justify-content: center;
+                  padding: 40px 20px;
+                  background-color: #e3c9a8;
+                }
+                
+                .custom-contact-container {
+                  display: flex;
+                  width: 80%;
+                  max-width: 1200px;
+                  gap: 40px;
+                }
+                
+                /* Left Section - Contact Form */
+                .custom-contact-form {
+                  flex: 1;
+                }
+                
+                .custom-contact-header {
+                  margin-bottom: 20px;
+                }
+                
+                .custom-contact-button {
+                  background-color: #4a3b29;
+                  color: #fff;
+                  border: none;
+                  padding: 8px 16px;
+                  font-size: 14px;
+                  cursor: pointer;
+                  border-radius: 4px;
+                }
+                
+                .custom-contact-header h1 {
+                  font-size: 36px;
+                  margin: 10px 0;
+                  color: #333;
+                }
+                
+                .custom-contact-header p {
+                  font-size: 16px;
+                  color: #666;
+                }
+                
+                .custom-form input,
+                .custom-form textarea {
+                  width: 100%;
+                  padding: 12px;
+                  margin-bottom: 15px;
+                  border: 1px solid #ccc;
+                  border-radius: 4px;
+                  font-size: 16px;
+                }
+                
+                .custom-form textarea {
+                  resize: none;
+                  height: 60px;
+                }
+                
+                .custom-form button {
+                  width: 100%;
+                  padding: 14px;
+                  font-size: 13px;
+                  background-color: #000;
+                  color: #fff;
+                  border: none;
+                  cursor: pointer;
+                  border-radius: 4px;
+                }
+                
+                /* Right Section - Office Details */
+                .custom-office-details {
+                  flex: 1;
+                  display: flex;
+                  flex-direction: column;
+                  align-items: center;
+                  text-align: left;
+                  color: #333;
+                }
+                
+                .custom-office-image {
+                  max-width: 100%;
+                  border-radius: 8px;
+                  margin-bottom: 20px;
+                }
+                
+                .custom-office-info {
+                  font-size: 16px;
+                  line-height: 1.6;
+                }
+                
+                .custom-office-info p {
+                  margin: 15px 0;
+                }
+                
+                .custom-office-info strong {
+                  color: #333;
+                  font-weight: bold;
+                }
+
+
+
+#fixedsocial {
+    top: 30%;
+    height: 200px;
+    width: 60px;
+    position: fixed;
+    right: 0;
+    z-index: 6;
+}
+
+#fixedsocial #getQuoteBtn {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+/* Popup Form Styling */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Overlay effect */
+    z-index: 7;
+}
+
+.popup-content {
+    position: relative;
+    margin: 10% auto;
+    padding: 20px;
+    width: 1000px;
+    background-color: white;
+    border-radius: 8px;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
     .ibm-plex sans-thin {
         font-family: "IBM Plex Sans", sans-serif;
         font-weight: 100;
